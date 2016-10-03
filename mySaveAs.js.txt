@@ -1,0 +1,18 @@
+var mySaveAs= app.trustedFunction(function(oDoc,cPath,cFlName){
+ app.beginPriv();
+ try{
+  oDoc.saveAs(cPath + cFlName);
+ }catch(e){
+  //var txt = '';
+  //
+  //for(var k in  e){
+  // txt += k + ": " + e.k;
+  // txt += '\n\r';
+  //}
+  app.alert({
+   nIcon:1 ,
+   cMsg:"File not saved in UOQ Manager"
+  });
+ }
+ app.endPriv();
+});
